@@ -1,5 +1,5 @@
 !function() {
-	SWAM.on("scoreboardUpdate", function(scores, minimap, maxScoreboard){
+	setInterval(function(){
 		var me = Players.getMe();
 		for (var playerID in Players.getIDs()) {
 			var player = Players.get(playerID);
@@ -7,7 +7,7 @@
 				Network.sendWhisper(me.id, "Enemy prowler: " + player.name + " at: " + player.lowResPos.x + ", " + player.lowResPos.y);
 			}
 		}
-	});
+	}, 1000);
 
 	SWAM.registerExtension({
 		name: "not-so-nice",
