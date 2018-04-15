@@ -1,10 +1,14 @@
 !function() {
 	setInterval(function(){
 		var me = Players.getMe();
+		var mount = Textures.sprite('mountain4');
+		mount.visible = false;
+		game.graphics.layers.flags.addChild(mount);
 		for (var playerID in Players.getIDs()) {
 			var player = Players.get(playerID);
 			if (player.type == 5 && player.team != me.team && Math.abs(player.lowResPos.x - me.lowResPos.x) < 1250 && Math.abs(player.lowResPos.y - me.lowResPos.y) < 700 ) {
-				Network.sendWhisper(me.id, "Enemy prowler: " + player.name + " at: " + player.lowResPos.x + ", " + player.lowResPos.y);
+				mount.position.set(player.lowResPos.x, player.lowResPos.y);
+				mount.visible = true;
 			}
 		}
 	}, 1000);
