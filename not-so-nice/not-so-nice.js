@@ -3,10 +3,12 @@
 	var mount;
 
 	SWAM.on("gamePrep", function() {
+		console.log("setting up!");
 		me = Players.getMe();
 		mount = Textures.sprite('mountain4');
 		game.graphics.layers.flags.addChild(mount);
 		setInterval(function(){
+			console.log("REFRESH!!!");
 			mount.visible = false;
 			for (var playerID in Players.getIDs()) {
 				var player = Players.get(playerID);
