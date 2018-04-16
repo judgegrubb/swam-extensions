@@ -1,13 +1,11 @@
 !function() {
-	var me;
-	var mount;
-
+	
 	SWAM.on("gamePrep", function() {
 		console.log("setting up!");
-		me = Players.getMe();
-		mount = Textures.sprite('mountain4');
+		var me = Players.getMe();
+		var mount = Textures.sprite('mountain4');
 		game.graphics.layers.flags.addChild(mount);
-		setInterval(function(){
+		setInterval(function(me, mount){
 			console.log("REFRESH!!!");
 			mount.visible = false;
 			for (var playerID in Players.getIDs()) {
@@ -17,7 +15,7 @@
 					mount.visible = true;
 				}
 			}
-		}, 1000);
+		}, 1000, me, mount);
 	});
 
 	SWAM.registerExtension({
