@@ -2,7 +2,6 @@
 
 	var mount = Textures.sprite('mountain4');
 	var ticker = new PIXI.ticker.Ticker();
-	console.log("test");
 	ticker.stop();
 	ticker.add(function(delta) {
 		console.log("REFRESH!!!");
