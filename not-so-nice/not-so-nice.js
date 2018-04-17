@@ -11,7 +11,7 @@
 				var player = Players.get(playerID);
 				var me = Players.getMe();
 				if (player.type == 5 && player.team != me.team && Math.abs(player.lowResPos.x - me.lowResPos.x) < 1250 && Math.abs(player.lowResPos.y - me.lowResPos.y) < 700 ) {
-					mount.position.set(player.lowResPos.x, player.lowResPos.y);
+					mount.position.set(player.lowResPos.x - 300, player.lowResPos.y - 300);
 					mount.visible = true;
 				}
 			}
