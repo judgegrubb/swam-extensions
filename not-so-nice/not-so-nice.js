@@ -15,7 +15,7 @@
 					mount.visible = true;
 				}
 			}
-		}, 500, mountObj);
+		}, 1000, mountObj);
 	});
 
 	SWAM.registerExtension({
